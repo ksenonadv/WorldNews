@@ -22,7 +22,7 @@ function forwardRequest(query: string, response: Response) {
   fetch(`${settings.newsApiUrl}/${query}&apiKey=${settings.newsApiKey}`).then((data) => {
     data.json().then((news) => {
       response.json(
-        news.articles.map(mapArticle)
+        news.articles.filter(n => n.title != '[Removed]').map(mapArticle)
       );
     }).catch((error) => {
       response.status(500).json({ 
