@@ -1,0 +1,5 @@
+@let articles = newsService.getLatest() | async;
+
+@if(articles) {
+  {{ articles | json }}
+}
