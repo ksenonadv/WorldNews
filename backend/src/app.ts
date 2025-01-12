@@ -1,11 +1,12 @@
 import express from 'express';
 import cors from 'cors';
+import settings from './config';
+import { registerRoutes } from './routes';
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(cors());
-
-app.listen(port, () => {
-  console.log(`Server running on ${port} port`);
+registerRoutes(app);
+app.listen(settings.port, () => {
+  console.log(`Server running on ${settings.port} port`);
 });
