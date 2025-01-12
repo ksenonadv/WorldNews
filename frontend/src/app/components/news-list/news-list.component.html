@@ -1,1 +1,7 @@
-<p>news-list works!</p>
+<div class="p-6 min-h-screen">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <app-article [data]="article" *ngFor="let article of articles"></app-article>
+    </div>
+  </div>
+</div>

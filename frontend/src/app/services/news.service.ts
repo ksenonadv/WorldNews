@@ -17,6 +17,7 @@ export class NewsService {
   }
 
   public getArticles(keyword: string) {
+    console.log(`Searching for articles with keyword: ${keyword}`);
     return this.http.post<Array<Article>>(`${this.API_URL}search`, { keyword });
   }
 }

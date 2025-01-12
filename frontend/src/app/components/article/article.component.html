@@ -1,1 +1,13 @@
-<p>article works!</p>
+<li class="bg-white/5 flex p-4 rounded-lg shadow-md">
+  <!-- Image container -->
+  <img [src]="data.image || 'https://via.placeholder.com/150'" class="w-32 h-32 rounded-lg mr-4 object-cover">
+  <div class="flex flex-col justify-start">
+    <h2 class="font-semibold text-xl text-white">
+      <div class = "bg-red-600 rounded-md text-white w-fit px-1">{{ data.source }}</div>{{ data.title }}</h2>
+    <p class="text-gray-200">{{ data.description }}</p>
+    <div class="flex justify-between items-center mt-4">
+      <a [href]="data.url" target="_blank" class="text-blue-500 hover:underline">Read more</a>
+      <p class="text-gray-400">{{ data.publishedAt | date: 'short' }}</p>
+    </div>
+  </div>
+</li>

@@ -1,1 +1,15 @@
-<p>search works!</p>
+
+<div class = "container mx-auto">
+  <form class="flex space-x-2" [formGroup]="searchForm" (ngSubmit)="search()">
+    <input type="text" formControlName="searchControl" placeholder="Search..." class="flex-1 p-2 border border-gray-700 outline-none bg-gray-900 text-white rounded">
+    <button class="bg-gray-900 hover:bg-black/15 text-white font-bold py-2 px-4 rounded" [disabled]="searchForm.invalid">
+      Search
+    </button>
+  </form>
+</div>
+
+@if (articles$ | async; as articles) {
+  <news-list [articles]="articles"></news-list>
+} @else if (articles$ != undefined) {
+  <loading></loading>
+}

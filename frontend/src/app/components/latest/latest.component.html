@@ -1,5 +1,5 @@
-@let articles = newsService.getLatest() | async;
-
-@if(articles) {
-  {{ articles | json }}
+@if (articles$ | async; as articles) {
+  <news-list [articles]="articles"></news-list>
+} @else {
+  <loading></loading>
 }
